@@ -1,0 +1,10 @@
+.SearchBar {
+
+}
+
+.SearchBar input {
+  box-sizing: border-box;
+  display: block;
+  margin: 10px auto;
+  width: 90%;
+}

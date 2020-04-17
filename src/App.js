@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
-class App extends Component {
+import Title from "./components/Title/Title";
+import Forecaster from './containers/Forecaster/Forecaster';
 
+class App extends Component {
   render() {
     return (
       <div className="App">
+        <Title />
+        <Forecaster />
       </div>
     );
   }
