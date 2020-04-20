@@ -21,6 +21,14 @@ const weatherAPI = (() => {
     });
   }
 
+  const convertToCelsius = (temperature) => {
+    return Math.round(temperature - 273.15);
+  };
+
+  const convertToFahrenheit = (temperature) => {
+    return convertToCelsius(temperature) * 2 + 30;
+  };
+
   // extract only the relevant data
   const getWeatherData = async (location) =>{
     try {
@@ -28,8 +36,10 @@ const weatherAPI = (() => {
   
       const relevantData = {
         description: data.weather[0].description,
-        temperature: data.main.temp,
-        temperatureFeel: data.main.feels_like,
+        temperatureF: convertToFahrenheit(data.main.temp),
+        temperatureFeelF: convertToFahrenheit(data.main.feels_like),
+        temperatureC: convertToCelsius(data.main.temp),
+        temperatureFeelC: convertToCelsius(data.main.feels_like),
         name: data.name
       };
       
