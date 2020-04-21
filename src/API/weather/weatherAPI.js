@@ -41,7 +41,8 @@ const weatherAPI = (() => {
         temperatureFeelF: convertToFahrenheit(data.main.feels_like),
         temperatureC: convertToCelsius(data.main.temp),
         temperatureFeelC: convertToCelsius(data.main.feels_like),
-        name: data.name
+        name: data.name,
+        icon: data.weather[0].icon,
       };
       
       return relevantData;

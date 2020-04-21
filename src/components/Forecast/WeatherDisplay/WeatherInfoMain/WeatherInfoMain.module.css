@@ -1,0 +1,4 @@
+.WeatherInfoMain {
+  display: flex;
+  justify-content: space-evenly;
+}

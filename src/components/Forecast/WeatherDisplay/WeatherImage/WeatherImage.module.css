@@ -1,0 +1,10 @@
+.WeatherImage {
+  display: flex;
+  flex-direction: column;
+}
+
+.Description {
+  text-transform: capitalize;
+  text-align: center;
+  margin: 0;
+}

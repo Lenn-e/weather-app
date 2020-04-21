@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WeatherInfo from '../WeatherInfo/WeatherInfo';
+import WeatherInfoMain from './WeatherInfoMain/WeatherInfoMain';
 import classes from './WeatherDisplay.module.css';
 import Location from '../Location/Location';
 
@@ -9,10 +9,13 @@ const WeatherDisplay = (props) => {
     <div className={classes.WeatherDisplay}>
       <Location 
         city={props.city} />
-      <WeatherInfo 
+      <WeatherInfoMain 
         tempF={props.tempF}
-        tempC={props.tempC} />
-
+        tempC={props.tempC}
+        realF={props.realF}
+        realC={props.realC}
+        icon={props.icon}
+        description={props.description} />
     </div>
   );
 };

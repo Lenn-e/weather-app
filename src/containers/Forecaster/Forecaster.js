@@ -36,7 +36,11 @@ class Forecaster extends Component {
         <WeatherDisplay 
           tempF={this.state.currentLocation.temperatureF}
           tempC={this.state.currentLocation.temperatureC}
-          city={this.state.currentLocation.name} />
+          realF={this.state.currentLocation.temperatureFeelF}
+          realC={this.state.currentLocation.temperatureFeelC}
+          city={this.state.currentLocation.name}
+          icon={this.state.currentLocation.icon}
+          description={this.state.currentLocation.description} />
       </div>
     );
   }
