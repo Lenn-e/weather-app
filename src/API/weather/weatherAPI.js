@@ -43,7 +43,10 @@ const weatherAPI = (() => {
         temperatureFeelC: convertToCelsius(data.main.feels_like),
         name: data.name,
         icon: data.weather[0].icon,
+        pressure: data.main.pressure,
+        humidity: data.main.humidity
       };
+      console.log(relevantData.icon)
       
       return relevantData;
     } catch {

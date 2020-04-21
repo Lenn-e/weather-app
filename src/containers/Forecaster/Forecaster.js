@@ -4,10 +4,12 @@ import weatherAPI from "../../API/weather/weatherAPI";
 import classes from "./Forecaster.module.css";
 import SearchBar from '../../components/Forecast/SearchBar/SearchBar';
 import WeatherDisplay from '../../components/Forecast/WeatherDisplay/WeatherDisplay';
+import UnitButton from "../../components/Forecast/UnitButton/UnitButton";
 
 class Forecaster extends Component {
   state = {
-    currentLocation: {}
+    currentLocation: {},
+    currentUnit: "C"
   };
 
   componentDidMount = () => {
@@ -28,19 +30,34 @@ class Forecaster extends Component {
       });
   };
 
+  switchUnitHandler = () => {
+    this.setState((prevState) => {
+      let unit;
+      prevState.currentUnit === "C" ? unit = "F" : unit = "C";
+      return {
+        currentUnit: unit
+      };
+    });
+  };
+
   render() {
     return (
       <div className={classes.Forecaster}>
         <SearchBar 
           getWeatherData={this.getWeatherData} />
         <WeatherDisplay 
+          currentUnit={this.state.currentUnit}
           tempF={this.state.currentLocation.temperatureF}
           tempC={this.state.currentLocation.temperatureC}
           realF={this.state.currentLocation.temperatureFeelF}
           realC={this.state.currentLocation.temperatureFeelC}
           city={this.state.currentLocation.name}
           icon={this.state.currentLocation.icon}
-          description={this.state.currentLocation.description} />
+          description={this.state.currentLocation.description}
+          pressure={this.state.currentLocation.pressure}
+          humidity={this.state.currentLocation.humidity} />
+        <UnitButton 
+          switchUnit={this.switchUnitHandler} />
       </div>
     );
   }
