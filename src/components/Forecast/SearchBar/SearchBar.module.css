@@ -2,9 +2,10 @@
 
 }
 
-.SearchBar input {
-  box-sizing: border-box;
-  display: block;
-  margin: 10px auto;
-  width: 90%;
+.AppearanceNone {
+  -webkit-appearance:     none;
+  -moz-appearance:        none;
+  -ms-appearance:         none;
+  -o-appearance:          none;
+  appearance:             none;
 }

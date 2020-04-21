@@ -11,7 +11,7 @@ class Forecaster extends Component {
   };
 
   componentDidMount = () => {
-    weatherAPI.getWeatherData("zagreb")
+    weatherAPI.getWeatherData("Tokyo")
       .then(data => {
         this.setState({
           currentLocation: data
@@ -19,19 +19,20 @@ class Forecaster extends Component {
       });
   };
 
-  getWeatherData = (e) => {
-    e.preventDefault();
-    const location = e.target.children["location"].value;
-    weatherAPI.getWeatherData(location)
+  getWeatherData = (city) => {
+    weatherAPI.getWeatherData(city)
       .then(data => {
-        console.log(data);
+        this.setState({
+          currentLocation: data
+        });
       });
   };
 
   render() {
     return (
       <div className={classes.Forecaster}>
-        <SearchBar getWeatherData={this.getWeatherData} />
+        <SearchBar 
+          getWeatherData={this.getWeatherData} />
         <WeatherDisplay 
           tempF={this.state.currentLocation.temperatureF}
           tempC={this.state.currentLocation.temperatureC}
