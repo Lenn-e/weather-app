@@ -4,7 +4,7 @@ const weatherAPI = (() => {
   };
 
   const requestWeatherData = (location) => {
-    return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=96b1e2bf4e1fdbd8e2bb97f9be4991e4`, {mode: 'cors'})
+    return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=96b1e2bf4e1fdbd8e2bb97f9be4991e4`, {mode: 'cors'})
     .then(response => {
       if(!response.ok && response.status !== 404) throw new Error();
       return response.json();

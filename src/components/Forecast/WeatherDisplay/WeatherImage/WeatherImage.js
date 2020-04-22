@@ -4,7 +4,7 @@ import classes from './WeatherImage.module.css';
 const WeatherImage = (props) => {
   let img = null;
   if(props.icon) {
-    const icon = `http://openweathermap.org/img/wn/${props.icon}@2x.png`;
+    const icon = `https://openweathermap.org/img/wn/${props.icon}@2x.png`;
     img = <img src={icon} alt="current weather" />
   }
 
