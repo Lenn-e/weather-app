@@ -6,8 +6,8 @@ const Location = (props) => {
   let date = new Date().toDateString()
   return (
     <div className={classes.Location}>
-      <p>{props.city}</p>
-      <p>{date}</p>
+      <p className={classes.CityName}>{props.city}</p>
+      <p className={classes.CurrentDate}>{date}</p>
     </div>
   );
 };

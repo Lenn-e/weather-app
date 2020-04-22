@@ -2,7 +2,7 @@ import React from 'react';
 
 import WeatherInfoMain from './WeatherInfoMain/WeatherInfoMain';
 import classes from './WeatherDisplay.module.css';
-import Location from '../Location/Location';
+import Location from './Location/Location';
 import WeatherInfoMore from './WeatherInfoMore/WeatherInfoMore';
 
 const WeatherDisplay = (props) => {

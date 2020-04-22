@@ -1,0 +1,13 @@
+.Location p {
+  margin: 0;
+}
+
+.Location .CityName {
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.Location .CurrentDate {
+  margin-top: 10px;
+  font-size: 13px;
+}

@@ -4,11 +4,11 @@ import classes from './WeatherInfoMain.module.css';
 import WeatherImage from '../WeatherImage/WeatherImage';
 
 const WeatherInfoMain = (props) => {
-  let temp = <h1>{props.tempC} °C</h1>;
-  let realFeel = <h3>Real feel: {props.realC} °C</h3>;
+  let temp = <p>{props.tempC} °C</p>;
+  let realFeel = <p>Real feel: {props.realC} °C</p>;
   if(props.currentUnit === "F") {
-    temp = <h1>{props.tempF} °F</h1>;
-    realFeel = <h3>Real feel: {props.realF} °F</h3>;
+    temp = <p>{props.tempF} °F</p>;
+    realFeel = <p>Real feel: {props.realF} °F</p>;
   }
 
   return (
@@ -16,7 +16,7 @@ const WeatherInfoMain = (props) => {
       <WeatherImage 
         icon={props.icon}
         description={props.description} />
-      <div>
+      <div className={classes.TempDisplay}>
         {temp}
         {realFeel}
       </div>
